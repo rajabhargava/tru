@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#000000"
+    android:id="@+id/layout_root">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="tru"
+        android:textSize="72sp"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="72dp"
+        android:id="@+id/tv_title"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login with facebook"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="72dp"
+        android:id="@+id/tv_fbSignin"
+        android:layout_below="@id/tv_title"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="or"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:id="@+id/tv_or"
+        android:layout_below="@id/tv_fbSignin"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_or"
+        android:layout_centerHorizontal="true"
+        android:padding="32dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="username"
+            android:background="#FFFFFF"
+            android:id="@+id/et_un"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="36dp"
+            android:textSize="32sp"
+            android:paddingHorizontal="72dp"
+            android:textAlignment="center"
+            android:inputType="textEmailAddress"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="password"
+            android:background="#FFFFFF"
+            android:id="@+id/et_pass"
+            android:layout_below="@id/et_un"
+            android:textSize="32sp"
+            android:paddingHorizontal="72dp"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+            android:inputType="textPassword"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forgot Password?"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="16dp"
+            android:id="@+id/tv_fpass"
+            android:layout_below="@id/et_pass"/>
+        
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LOGIN"
+            android:background="#FFFFFF"
+            android:id="@+id/bt_login"
+            android:layout_below="@id/tv_fpass"
+            android:layout_marginTop="16dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SIGNUP"
+            android:textSize="24sp"
+            android:textAlignment="center"
+            android:background="#FFFFFF"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="64dp"
+            android:id="@+id/bt_signup"
+            android:layout_below="@id/bt_login"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+</RelativeLayout>

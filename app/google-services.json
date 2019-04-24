@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1065156533335",
+    "firebase_url": "https://trucab.firebaseio.com",
+    "project_id": "trucab",
+    "storage_bucket": "trucab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1065156533335:android:57b8667b47f2aab4",
+        "android_client_info": {
+          "package_name": "com.example.tru"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1065156533335-3in9hra6b3hu3mj9uo03kgnqr4dbtvkt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tru",
+            "certificate_hash": "41edd2f46b0ea0e85463cfa6ebd8c14d1ac1aefe"
+          }
+        },
+        {
+          "client_id": "1065156533335-4ibd892ja9l6ta5agsgpq5ojftl8v94l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGKXRrgzwYbHTPmNvHZDFRVmnexZtLztk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1065156533335-4ibd892ja9l6ta5agsgpq5ojftl8v94l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
