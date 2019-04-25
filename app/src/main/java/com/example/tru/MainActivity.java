@@ -25,6 +25,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
+import dmax.dialog.SpotsDialog;
+
 public class MainActivity extends AppCompatActivity {
 
     Button btnLogIn, btnSignUp;
@@ -71,10 +73,17 @@ public class MainActivity extends AppCompatActivity {
         String username = et_user.getText().toString();
         String password = et_pass.getText().toString();
 
+        btnLogIn.setEnabled(false);
+
+        final SpotsDialog waitDialog = new SpotsDialog(MainActivity.this);
+        waitDialog.show();
+
+        //Login
         auth.signInWithEmailAndPassword(username,password)
                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
+                        waitDialog.dismiss();
                         startActivity(new Intent(MainActivity.this,Welcome.class));
                         finish();
                         Toast.makeText(MainActivity.this,"LogedIn",Toast.LENGTH_SHORT).show();
@@ -83,6 +92,8 @@ public class MainActivity extends AppCompatActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
+                        waitDialog.dismiss();
+                        btnLogIn.setEnabled(true);
                         Snackbar.make(rootLayout,"Failed "+e.getMessage(),Snackbar.LENGTH_SHORT)
                         .show();
                     }
