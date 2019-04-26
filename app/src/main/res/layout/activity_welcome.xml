@@ -25,8 +25,12 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:id="@+id/switch_lcation"
-                app:icon_release="@drawable/ic_location_off"
-                app:icon_press="@drawable/ic_location_on"/>
+                app:icon_release="@drawable/icon_location_off"
+                app:icon_press="@drawable/icon_location_on"
+                app:base_release_color="@color/baseReleaseColor"
+                app:base_press_color="@color/basePressColor"
+                app:ball_release_color="@color/ballReleaseColor"
+                app:ball_press_color="#FFFFFF"/>
         </LinearLayout>
     </RelativeLayout>
 

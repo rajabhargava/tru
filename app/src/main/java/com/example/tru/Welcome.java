@@ -3,7 +3,7 @@ package com.example.tru;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.location.Location;
-import android.location.LocationListener;
+import com.google.android.gms.location.LocationListener;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.support.annotation.NonNull;
@@ -24,9 +24,9 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.GoogleApi;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -50,7 +50,7 @@ public class Welcome extends FragmentActivity implements OnMapReadyCallback,
 {
 
     private GoogleMap mMap;
-    private FusedLocationProviderClient mFusedLocationClient;
+
 
     //Permission Codes
     private static final int MY_PERMISSION_REQUEST_CODE = 7000;
@@ -203,7 +203,8 @@ public class Welcome extends FragmentActivity implements OnMapReadyCallback,
                             .position(new LatLng(latitude,longitude))
                             .title("You"));
 
-                     mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(latitude,latitude),15.0f));
+                            CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(new LatLng(latitude,longitude), 10);
+                     mMap.animateCamera(cameraUpdate);
                      rotateMarker(current_marker,-360,mMap);
                         }
                     });
@@ -254,21 +255,6 @@ public class Welcome extends FragmentActivity implements OnMapReadyCallback,
     public void onLocationChanged(Location location) {
         mLastLocation = location;
         displayLocation();
-    }
-
-    @Override
-    public void onStatusChanged(String provider, int status, Bundle extras) {
-
-    }
-
-    @Override
-    public void onProviderEnabled(String provider) {
-
-    }
-
-    @Override
-    public void onProviderDisabled(String provider) {
-
     }
 
     @Override
